@@ -1,14 +1,17 @@
 # CloudModel::Api::Hetzner
-Short description and motivation.
+Support for Hetzner Hosting API in [CloudModel](https://github.com/cloudmodel/cloudmodel).
 
 ## Usage
-How to use my plugin.
+Adds following ablities to CloudModel:
+
+* Change Hetzner server name on changing CloudModel host´s name
+* Sync changes to Hetzner servers and subnets to CloudModel host´s configuration
 
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'cloud_model-api-hetzner'
+gem 'cloudmodel-api-hetzner'
 ```
 
 And then execute:
@@ -18,11 +21,8 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install cloud_model-api-hetzner
+$ gem install cloudmodel-api-hetzner
 ```
-
-## Contributing
-Contribution directions go here.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
