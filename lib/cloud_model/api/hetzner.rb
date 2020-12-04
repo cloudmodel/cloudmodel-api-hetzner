@@ -1,7 +1,7 @@
 require "cloudmodel"
 require "cloud_model/engine"
 
-require "cloud_model/api/hetzner/engine"
+#require "cloud_model/api/hetzner/engine"
 require "cloud_model/api/hetzner/config"
 require "cloud_model/api/hetzner/host"
 require "cloud_model/api/hetzner/monitoring"
