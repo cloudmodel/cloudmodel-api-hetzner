@@ -1,8 +1,11 @@
 require "cloudmodel"
 require "cloud_model/engine"
 
-#require "cloud_model/api/hetzner/engine"
+if Rails.env.test?
+  require "cloud_model/api/hetzner/engine"
+end
 require "cloud_model/api/hetzner/config"
+require "cloud_model/api/hetzner/address_resolution"
 require "cloud_model/api/hetzner/host"
 require "cloud_model/api/hetzner/monitoring"
 require "cloud_model/api/hetzner/rdns"

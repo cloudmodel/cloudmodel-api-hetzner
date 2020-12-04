@@ -13,6 +13,16 @@ module CloudModel
             CloudModel::Api::Hetzner.request_delete "rdns/#{ip}"
           end
         end
+
+        def self.sync_to_address_resolutions
+          all.each do |info|
+            ip = info['rdns']['ip']
+
+            resolution = CloudModel::AddressResolution.find_or_initialize_by('ip' => ip)
+            resolution.name = info['rdns']['ptr']
+            resolution.save
+          end
+        end
       end
     end
   end
