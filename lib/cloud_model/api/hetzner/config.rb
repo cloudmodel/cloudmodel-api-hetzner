@@ -10,9 +10,10 @@ module CloudModel
   end
 end
 
-CloudModel::ConfigModules::Api.class_eval do
+module CloudModel::Api::Hetzner::ConfigInclude
   def hetzner
     @hetzner ||= CloudModel::Api::Hetzner::Config.new
   end
 end
 
+CloudModel::ConfigModules::Api.class_eval { include CloudModel::Api::Hetzner::ConfigInclude }

@@ -31,7 +31,7 @@ module CloudModel
             response.body
           end
         else
-          puts "error #{response.value}: #{response.body}"
+          puts "error #{response.code}: #{response.body}"
           false
         end
       end
