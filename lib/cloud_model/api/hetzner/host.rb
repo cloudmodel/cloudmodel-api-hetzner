@@ -34,4 +34,6 @@ module CloudModel
   end
 end
 
-CloudModel::Host.class_eval { include CloudModel::Api::Hetzner::Host }
+ActiveSupport::Reloader.to_prepare do
+  CloudModel::Host.class_eval { include CloudModel::Api::Hetzner::Host }
+end

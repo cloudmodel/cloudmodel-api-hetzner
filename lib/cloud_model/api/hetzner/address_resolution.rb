@@ -42,4 +42,6 @@ module CloudModel
   end
 end
 
-CloudModel::AddressResolution.class_eval { include CloudModel::Api::Hetzner::AddressResolution }
+ActiveSupport::Reloader.to_prepare do
+  CloudModel::AddressResolution.class_eval { include CloudModel::Api::Hetzner::AddressResolution }
+end
