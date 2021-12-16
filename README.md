@@ -1,4 +1,8 @@
 # CloudModel::Api::Hetzner
+
+![RSpec](https://github.com/cloudmodel/cloudmodel-api-hetzner/workflows/RSpec/badge.svg)
+![CodeQL](https://github.com/cloudmodel/cloudmodel-api-hetzner/workflows/CodeQL/badge.svg)
+
 Support for Hetzner Hosting API in [CloudModel](https://github.com/cloudmodel/cloudmodel).
 
 ## Usage
