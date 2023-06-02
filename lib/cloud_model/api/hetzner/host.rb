@@ -19,12 +19,12 @@ module CloudModel
         end
 
         def set_hetzner_name
-          name_changed = name_changed?
-          if result = yield and name_changed
-            begin
+          begin
+            if result = yield and name_changed?
               CloudModel::Api::Hetzner::Server.set_name primary_address.ip, name
-            rescue
+
             end
+          rescue
           end
 
           result
