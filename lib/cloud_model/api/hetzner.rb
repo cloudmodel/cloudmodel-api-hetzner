@@ -1,5 +1,5 @@
 require "cloudmodel"
-require "cloud_model/engine"
+#require "cloud_model/engine"
 
 if Rails.env.test?
   require "cloud_model/api/hetzner/engine"
@@ -55,3 +55,8 @@ module CloudModel
     end
   end
 end
+
+# ActiveSupport::Reloader.to_prepare do
+#   CloudModel::AddressResolution.class_eval { include CloudModel::Api::Hetzner::AddressResolution }
+#   CloudModel::Host.class_eval { include CloudModel::Api::Hetzner::Host }
+# end

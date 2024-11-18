@@ -1,8 +1,4 @@
-begin
-  CloudModel::Host
-rescue
-  require File.expand_path('../../app/models/cloud_model/host', CloudModel::Engine.called_from)
-end
+#require "cloudmodel/host"
 
 module CloudModel
   module Api
@@ -32,8 +28,4 @@ module CloudModel
       end
     end
   end
-end
-
-ActiveSupport::Reloader.to_prepare do
-  CloudModel::Host.class_eval { include CloudModel::Api::Hetzner::Host }
 end

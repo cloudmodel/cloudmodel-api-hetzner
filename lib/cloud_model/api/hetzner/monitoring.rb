@@ -1,15 +1,15 @@
-begin
-  CloudModel::Monitoring
-rescue
-  require File.expand_path('../../app/models/cloud_model/monitoring', CloudModel::Engine.called_from)
-end
-
-begin
-  CloudModel::Monitoring::BaseChecks
-rescue
-  require File.expand_path('../../app/models/cloud_model/monitoring/base_checks', CloudModel::Engine.called_from)
-end
-
+# begin
+#   CloudModel::Monitoring
+# rescue
+#   require File.expand_path('../../app/models/cloud_model/monitoring', CloudModel::Engine.called_from)
+# end
+#
+# begin
+#   CloudModel::Monitoring::BaseChecks
+# rescue
+#   require File.expand_path('../../app/models/cloud_model/monitoring/base_checks', CloudModel::Engine.called_from)
+# end
+require "cloud_model/monitoring"
 
 module CloudModel
   module Api
