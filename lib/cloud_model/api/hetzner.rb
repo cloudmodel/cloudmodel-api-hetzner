@@ -1,9 +1,13 @@
 require "cloudmodel"
 #require "cloud_model/engine"
 
-if Rails.env.test?
-  require "cloud_model/api/hetzner/engine"
-end
+# Loading the (boilerplate-only) Rails::Engine here registers its app/* paths
+# during app init, which raises FrozenError under Rails 8.1 (autoload paths are
+# frozen by then). The gem's behaviour lives in lib/, so the engine isn't
+# needed — kept consistent with cloudmodel-api-desec.
+# if Rails.env.test?
+#   require "cloud_model/api/hetzner/engine"
+# end
 require "cloud_model/api/hetzner/config"
 require "cloud_model/api/hetzner/address_resolution"
 require "cloud_model/api/hetzner/host"
