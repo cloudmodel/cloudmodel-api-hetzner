@@ -11,7 +11,14 @@ module CloudModel
         end
 
         def self.sync_to_hosts
-          all.each do |info|
+          servers = all
+          # send_request returns false on HTTP errors (e.g. 401 with wrong
+          # credentials) — fail with a clear message instead of `each on false`
+          unless servers
+            raise "Hetzner API request failed — check config.api.hetzner credentials"
+          end
+
+          servers.each do |info|
             ip = info['server']['server_ip']
 
             host = CloudModel::Host.where('primary_address.ip' => ip).first
